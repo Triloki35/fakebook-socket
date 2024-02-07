@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
   // Notification
   socket.on("Notification", (data) => {
     const user = users.find((user) => user.userId === data.receiverId);
-    io.to(user?.socketId).emit("Notification", data);
+    io.to(user?.socketId).emit("Notification");
   });
 
   // friend-request
